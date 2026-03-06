@@ -23,16 +23,16 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
 
   return (
     <main className="flex-1 overflow-y-auto pb-20 w-full max-w-7xl mx-auto">
-      {/* Hero Section - SEO optimized with h1 */}
+      {/* Hero Section */}
       <section className="px-4 py-6" aria-labelledby="hero-heading">
-        <div className="relative flex flex-col md:flex-row gap-6 overflow-hidden rounded-[3rem] bg-slate-100 dark:bg-slate-900/40 p-8 md:p-16 min-h-[500px] md:items-center border border-slate-200 dark:border-slate-800">
+        <div className="relative flex flex-col md:flex-row gap-6 overflow-hidden rounded-3rem bg-slate-100 dark:bg-slate-900/40 p-8 md:p-16 min-h-500px md:items-center border border-slate-200 dark:border-slate-800">
           <div className="flex flex-col gap-6 z-10 md:w-1/2">
-            <span className="text-primary font-black tracking-[0.3em] text-xs uppercase">New Season 2025</span>
+            <span className="text-primary font-black tracking-[0.3em] text-xs uppercase">New Season 2026</span>
             <h1 id="hero-heading" className="text-slate-900 dark:text-white text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase">
-              Modern <br/><span className="text-primary">Minimal</span>
+              House <br/>of <span className="text-primary">Enna</span>
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-              Discover the intersection of comfort and high-fashion. Sustainably sourced, ethically made, designed for the future.
+              Where elegance meets intention.  House of Enna brings you timeless pieces — sustainably sourced, ethically made, and designed for the modern woman.
             </p>
             <div className="flex flex-wrap gap-4 mt-4">
               <button 
@@ -45,14 +45,14 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
                 onClick={() => showToast("Lookbook coming soon!")}
                 className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-10 py-5 rounded-2xl text-base font-black uppercase tracking-widest border-2 border-slate-200 dark:border-slate-800 hover:border-primary transition-all"
               >
-                Lookbook
+                Our Lookbook
               </button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <img 
               src="https://picsum.photos/seed/hero/800/800" 
-              alt="Modern Minimalist Fashion Collection 2025"
+              alt="House of Enna — New Season 2025 Collection"
               className="w-full max-w-md aspect-square object-cover rounded-[3rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 border-4 border-white dark:border-slate-800"
               referrerPolicy="no-referrer"
             />
@@ -96,9 +96,9 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
             <div 
               key={cat.name} 
               onClick={() => onNavigate('EXPLORE')}
-              className="flex-shrink-0 w-40 md:w-full flex flex-col items-center gap-4 group cursor-pointer"
+              className="shrink-0 w-40 md:w-full flex flex-col items-center gap-4 group cursor-pointer"
             >
-              <div className="w-full aspect-square rounded-[2rem] bg-slate-100 dark:bg-slate-900 flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all p-6 overflow-hidden shadow-sm">
+              <div className="w-full aspect-square rounded-2rem bg-slate-100 dark:bg-slate-900 flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all p-6 overflow-hidden shadow-sm">
                 <img src={cat.image} alt={cat.name} className="w-full h-full object-contain transition-transform group-hover:scale-110" referrerPolicy="no-referrer" />
               </div>
               <span className="text-sm font-black tracking-widest uppercase">{cat.name}</span>
@@ -130,12 +130,12 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
         </div>
       </section>
 
-      {/* Blog Section - NEW */}
+      {/* Blog Section */}
       <section className="py-16 px-4 bg-slate-50 dark:bg-slate-900/30 rounded-[3rem] mx-4 my-8" aria-labelledby="blog-heading">
         <div className="flex items-center justify-between mb-10">
           <div className="flex items-center gap-3">
             <BookOpen className="w-6 h-6 text-primary" />
-            <h2 id="blog-heading" className="text-2xl font-black uppercase tracking-tighter">Fashion Journal</h2>
+            <h2 id="blog-heading" className="text-2xl font-black uppercase tracking-tighter">Enna Journal</h2>
           </div>
           <button 
             onClick={() => onNavigate('BLOG')}
@@ -154,18 +154,18 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
                 </div>
               </div>
               <h3 className="text-xl font-black uppercase tracking-tight group-hover:text-primary transition-colors">{post.title}</h3>
-              <p className="text-sm text-slate-500 mt-2">Discover the latest trends and styling tips from our fashion experts...</p>
+              <p className="text-sm text-slate-500 mt-2">Curated style stories and fashion inspiration from the House of Enna team...</p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Q&A Section - NEW */}
+      {/* Q&A Section */}
       <section className="py-16 px-4" aria-labelledby="qa-heading">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-10 justify-center">
             <HelpCircle className="w-6 h-6 text-primary" />
-            <h2 id="qa-heading" className="text-2xl font-black uppercase tracking-tighter">Fashion Q&A</h2>
+            <h2 id="qa-heading" className="text-2xl font-black uppercase tracking-tighter">Enna FAQ</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
