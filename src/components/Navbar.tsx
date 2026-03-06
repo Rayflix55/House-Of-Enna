@@ -124,14 +124,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-110 bg-black/60 backdrop-blur-sm"
             />
             <motion.div 
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 bottom-0 z-[120] w-[80%] max-w-sm bg-background-light dark:bg-background-dark p-8 shadow-2xl"
+              className="fixed top-0 left-0 bottom-0 z-120 w-80% max-w-sm bg-background-light dark:bg-background-dark p-8 shadow-2xl"
             >
               <div className="flex items-center justify-between mb-12">
                 <h2 className="text-2xl font-black tracking-tighter uppercase">Menu</h2>
@@ -179,7 +179,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[100] bg-background-light dark:bg-background-dark p-6"
+            className="fixed inset-0 z-100 bg-background-light dark:bg-background-dark p-6"
           >
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center justify-between mb-8">
