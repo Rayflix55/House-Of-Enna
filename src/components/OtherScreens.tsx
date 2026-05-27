@@ -11,53 +11,83 @@ interface ScreenProps {
 }
 
 export const Explore: React.FC<ScreenProps> = ({ onProductClick, showToast }) => {
+  const [activeCategory, setActiveCategory] = React.useState<string>('All');
+  const [localSearch, setLocalSearch] = React.useState<string>('');
+
+  const categories = ['All', 'Dresses', 'Two-Piece Sets', 'Luxury Lace', 'Senator & Native'];
+
+  const filteredProducts = React.useMemo(() => {
+    return PRODUCTS.filter(product => {
+      const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
+      const matchesSearch = product.name.toLowerCase().includes(localSearch.toLowerCase()) ||
+        product.category.toLowerCase().includes(localSearch.toLowerCase()) ||
+        (product.description?.toLowerCase() || '').includes(localSearch.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, localSearch]);
+
   return (
     <motion.main 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex-1 overflow-y-auto pb-24 w-full max-w-7xl mx-auto px-4 py-8"
+      className="flex-1 overflow-y-auto pb-24 w-full max-w-none px-4 md:px-12 lg:px-16 xl:px-24 py-8"
     >
-      <div className="flex items-center gap-3 mb-8">
-        <Compass className="w-8 h-8 text-primary" />
-        <h1 className="text-3xl font-black tracking-tighter uppercase">Explore</h1>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div 
-          onClick={() => showToast("New Arrivals collection coming soon!")}
-          className="relative h-48 rounded-3xl overflow-hidden group cursor-pointer"
-        >
-          <img src="https://picsum.photos/seed/fashion1/800/600" alt="New Arrivals" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h3 className="text-white text-2xl font-black uppercase tracking-widest">New Arrivals</h3>
-          </div>
+      {/* Page Header */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+        <div className="flex items-center gap-3">
+          <Compass className="w-8 h-8 text-[#043327] dark:text-[#e8cf7a]" />
+          <h1 className="text-3xl md:text-4xl font-serif font-black tracking-tight uppercase">Explore Collection</h1>
         </div>
-        <div 
-          onClick={() => showToast("Best Sellers collection coming soon!")}
-          className="relative h-48 rounded-3xl overflow-hidden group cursor-pointer"
-        >
-          <img src="https://picsum.photos/seed/fashion2/800/600" alt="Best Sellers" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h3 className="text-white text-2xl font-black uppercase tracking-widest">Best Sellers</h3>
-          </div>
-        </div>
-        <div 
-          onClick={() => showToast("Limited Edition collection coming soon!")}
-          className="relative h-48 rounded-3xl overflow-hidden group cursor-pointer"
-        >
-          <img src="https://picsum.photos/seed/fashion3/800/600" alt="Limited Edition" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h3 className="text-white text-2xl font-black uppercase tracking-widest">Limited Edition</h3>
-          </div>
+        
+        {/* Search Bar */}
+        <div className="relative w-full md:w-80">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
+          <input 
+            type="text" 
+            value={localSearch}
+            onChange={(e) => setLocalSearch(e.target.value)}
+            placeholder="Search female catalog..."
+            className="bg-white dark:bg-emerald-950/20 font-sans border border-slate-200 dark:border-emerald-900 rounded-2xl py-3.5 pl-12 pr-6 text-sm w-full placeholder-slate-400 outline-none focus:ring-1 focus:ring-[#043327] dark:focus:ring-[#e8cf7a] transition-all text-slate-800 dark:text-white"
+          />
         </div>
       </div>
 
-      <h2 className="text-xl font-black uppercase tracking-widest mb-6">Recommended For You</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {PRODUCTS.slice(2, 6).map(product => (
-          <ProductCard key={product.id} product={product} onClick={() => onProductClick(product)} />
+      {/* Category Pills Filter */}
+      <div className="flex gap-2 overflow-x-auto pb-6 no-scrollbar mb-10">
+        {categories.map((catName) => (
+          <button
+            key={catName}
+            onClick={() => setActiveCategory(catName)}
+            className={`px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all border ${
+              activeCategory === catName
+                ? 'bg-[#e25c30] text-white border-[#e25c30] shadow-md shadow-orange-500/10'
+                : 'bg-[#f6efe5] dark:bg-[#032019] border-[#043327]/10 dark:border-[#e8cf7a]/20 text-slate-600 dark:text-slate-300 hover:border-[#043327] dark:hover:border-[#e8cf7a]'
+            }`}
+          >
+            {catName}
+          </button>
         ))}
       </div>
+
+      {/* Grid List */}
+      {filteredProducts.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {filteredProducts.map(product => (
+            <ProductCard 
+              key={product.id} 
+              product={product} 
+              onClick={() => onProductClick(product)} 
+              showToast={showToast}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-24 bg-[#f6efe5]/40 dark:bg-[#032019]/20 border border-[#043327]/10 rounded-[2.5rem] p-8 md:p-12">
+          <Search className="w-12 h-12 mx-auto text-slate-300 mb-4" />
+          <h3 className="text-xl font-serif font-bold text-[#043327] dark:text-[#e8cf7a] mb-2 uppercase">No styles found</h3>
+          <p className="text-xs text-slate-500 max-w-sm mx-auto">We couldn't find any premium women's pieces matching "{localSearch}" in category "{activeCategory}". Try general terms.</p>
+        </div>
+      )}
     </motion.main>
   );
 };
@@ -67,7 +97,7 @@ export const Wishlist: React.FC<ScreenProps> = ({ onProductClick, showToast }) =
     <motion.main 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex-1 overflow-y-auto pb-24 w-full max-w-7xl mx-auto px-4 py-8"
+      className="flex-1 overflow-y-auto pb-24 w-full max-w-none px-4 md:px-12 lg:px-16 xl:px-24 py-8"
     >
       <div className="flex items-center gap-3 mb-8">
         <Heart className="w-8 h-8 text-primary" />
@@ -281,7 +311,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({ query, onProductCl
     <motion.main 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex-1 overflow-y-auto pb-24 w-full max-w-7xl mx-auto px-4 py-8"
+      className="flex-1 overflow-y-auto pb-24 w-full max-w-none px-4 md:px-12 lg:px-16 xl:px-24 py-8"
     >
       <div className="mb-10">
         <h1 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Search Results for</h1>

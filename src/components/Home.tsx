@@ -52,14 +52,13 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
 
   // 3. Highlight Item of the Week
   const highlightItem = PRODUCTS[3]; // 'Ankara Multi-Layer Dress'
-  // ✅ Fix: use optional chaining and fallback color
   const [highlightColor, setHighlightColor] = useState<string>(highlightItem.colors?.[0] || '#000000');
   const [highlightSize, setHighlightSize] = useState<string>('M');
   const [highlightQty, setHighlightQty] = useState<number>(1);
 
   const highlightImage = useMemo(() => {
     return highlightItem.colorImages?.[highlightColor] || highlightItem.image;
-  }, [highlightColor, highlightItem]);
+  }, [highlightColor]);
 
   const handleBuyHighlightNow = () => {
     if (onAddToCart) {
@@ -89,13 +88,13 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
       className="flex-1 overflow-y-auto pb-24 w-full bg-[#f6efe5] dark:bg-[#032019] text-[#1c2a25] dark:text-[#f3f7f5]"
     >
       {/* ================= HERO SECTION ================= */}
-      <section className="px-4 py-6 max-w-7xl mx-auto">
-        <div className="relative overflow-hidden rounded-[3.5rem] bg-[#043327] text-white p-8 md:p-16 min-h-[640px] lg:min-h-[700px] flex flex-col justify-between border border-emerald-950 shadow-2xl">
-          {/* Backdrops */}
-          <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute left-1/4 bottom-10 w-96 h-96 bg-[#e8cf7a]/5 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10 w-full h-full my-auto">
+      <section className="w-full bg-[#043327] text-white border-b border-emerald-950/40 relative overflow-hidden py-12 md:py-20 min-h-[640px] lg:min-h-[700px] flex flex-col justify-center">
+        {/* Backdrops */}
+        <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-1/4 bottom-10 w-96 h-96 bg-[#e8cf7a]/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full h-full my-auto">
             {/* Left Column Content */}
             <div className="lg:col-span-7 flex flex-col gap-6 text-left">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full w-fit border border-white/5 shadow-sm">
@@ -213,7 +212,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
       </section>
 
       {/* ================= EXPLORE OUR BEST CATEGORIES SECTION ================= */}
-      <section className="py-20 px-4 max-w-7xl mx-auto" aria-labelledby="best-categories">
+      <section className="py-20 px-4 md:px-12 lg:px-16 xl:px-24 w-full max-w-none" aria-labelledby="best-categories">
         {/* Title & Shop Now header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -327,9 +326,8 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
                 className="group cursor-pointer text-left"
               >
                 <div className="aspect-[3/3.2] bg-[#eae3d5]/65 rounded-[1.8rem] overflow-hidden mb-4 border border-[#043327]/10 dark:border-emerald-900/40 relative shadow-sm">
-                  {/* ✅ Fix: optional chaining for colors[1] */}
                   <img 
-                    src={activeSpotlightProduct.colorImages?.[activeSpotlightProduct.colors?.[1] as string] || activeSpotlightProduct.image} 
+                    src={activeSpotlightProduct.colorImages?.[activeSpotlightProduct.colors?.[1] as string] || activeSpotlightProduct.image}
                     alt="" 
                     className="w-full h-full object-cover transition-transform duration-505 group-hover:scale-105"
                   />
@@ -361,7 +359,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
         <div className="absolute right-10 bottom-0 w-80 h-80 bg-emerald-950/20 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute -left-10 top-1/4 w-96 h-96 bg-[#e8cf7a]/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full px-0 md:px-12 lg:px-16 xl:px-24 max-w-none">
           {/* Header row in bento mockup */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
             <div className="text-left space-y-4 lg:max-w-xl">
@@ -397,7 +395,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
 
           {/* Dynamic White-background cards list based on filtering */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {trendingFilteredProducts.slice(0, 4).map((product) => (
+            {trendingFilteredProducts.slice(0, 8).map((product) => (
               <div 
                 key={product.id} 
                 onClick={() => onProductClick(product)}
@@ -445,7 +443,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
       </section>
 
       {/* ================= DYNAMIC HIGHLIGHT ITEM OF THE WEEK SECTION ================= */}
-      <section className="px-4 py-16 max-w-7xl mx-auto" aria-labelledby="highlight-heading">
+      <section className="px-4 md:px-12 lg:px-16 xl:px-24 py-16 w-full max-w-none" aria-labelledby="highlight-heading">
         <div className="relative overflow-hidden rounded-[3.5rem] bg-[#f9f5e8] dark:bg-[#032019]/80 p-8 md:p-16 min-h-[520px] border border-amber-200/55 dark:border-emerald-900/50 shadow-xl text-left">
           {/* Decorative play video rotate trigger circle as requested in the highlight week box */}
           <div className="absolute top-10 left-10 md:left-auto md:right-16 z-20 flex flex-col items-center gap-1.5 hover:scale-105 active:scale-95 transition-all cursor-pointer" onClick={() => showToast("Loading behind the scenes tailoring clip...")}>
@@ -494,8 +492,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
               <div className="mt-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-3">Preferred fabric color</span>
                 <div className="flex gap-4">
-                  {/* ✅ Fix: optional chaining for colors array */}
-                  {highlightItem.colors?.map(colorHex => (
+                 {highlightItem.colors?.map(colorHex => (
                     <button 
                       key={colorHex}
                       style={{ backgroundColor: colorHex }}
@@ -514,8 +511,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
               <div className="space-y-3">
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block">Required size specs</span>
                 <div className="flex gap-2 flex-wrap">
-                  {/* ✅ Fix: optional chaining for sizes array */}
-                  {highlightItem.sizes?.map(sizeStr => (
+                {highlightItem.sizes?.map(sizeStr => (
                      <button
                       key={sizeStr}
                       onClick={() => setHighlightSize(sizeStr)}
@@ -562,7 +558,7 @@ export const Home: React.FC<HomeProps> = ({ onProductClick, onNavigate, showToas
       </section>
 
       {/* ================= BLOG & FAQS SECTIONS ================= */}
-      <section className="py-20 px-4 max-w-7xl mx-auto border-t border-slate-250 dark:border-emerald-950/40">
+      <section className="py-20 px-4 md:px-12 lg:px-16 xl:px-24 w-full max-w-none border-t border-slate-250 dark:border-emerald-950/40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Fashion Journal */}
           <div>
