@@ -1,5 +1,8 @@
 {
-  "name": "MODERN Fashion",
-  "description": "A high-end minimalist fashion shopping experience with a focus on unisex essentials.",
-  "requestFramePermissions": []
+  "name": "House Of Enna",
+  "description": "House Of Enna - Premium high-end bespoke Nigerian fashion, Ankara, Lace, and Senator outfits with Abuja & nationwide delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

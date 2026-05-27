@@ -7,6 +7,7 @@ export interface Product {
   description?: string;
   colors?: string[];
   sizes?: string[];
+  colorImages?: Record<string, string>;
 }
 
 export interface CartItem extends Product {

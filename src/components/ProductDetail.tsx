@@ -3,6 +3,7 @@ import { CheckCircle, Star, User, MessageSquare, Facebook, Twitter, Share2 } fro
 import { Product } from '../types';
 import { PRODUCTS } from '../constants';
 import { ProductCard } from './ProductCard';
+import { SizeGuideModal } from './SizeGuideModal';
 import { motion } from 'motion/react';
 
 interface ProductDetailProps {
@@ -14,7 +15,9 @@ interface ProductDetailProps {
 export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCart, onProductClick }) => {
   const [selectedSize, setSelectedSize] = useState(product.sizes?.[1] || 'M');
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || '#000');
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
+  const displayImage = product.image;
   const similarProducts = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
 
   const reviews = [
@@ -26,28 +29,38 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
   return (
     <main className="flex-1 overflow-y-auto pb-24 w-full max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:p-8 mb-20">
-        <div className="aspect-3/4 w-full bg-slate-100 dark:bg-slate-900 overflow-hidden md:rounded-3xl">
-          <img src={product.image} alt={product.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        <div className="aspect-[3/4] w-full bg-[#eae3d5]/35 dark:bg-[#032019] overflow-hidden md:rounded-3xl relative min-h-[350px]">
+          <motion.img 
+            key={displayImage}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            src={displayImage} 
+            alt={product.name} 
+            className="w-full h-full object-cover absolute inset-0" 
+            referrerPolicy="no-referrer" 
+          />
         </div>
         
         <div className="py-8 flex flex-col justify-center">
           <div className="mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">New Season</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-black leading-tight mb-4 uppercase tracking-tighter">{product.name}</h1>
-          <p className="text-2xl md:text-3xl font-light text-slate-700 dark:text-slate-300 mb-10">${product.price.toFixed(2)}</p>
+          <h1 className="text-4xl md:text-6xl font-serif font-black leading-tight mb-4 uppercase tracking-tighter text-primary dark:text-accent-gold">{product.name}</h1>
+          <p className="text-2xl md:text-3xl font-light text-slate-700 dark:text-slate-300 mb-10">₦{product.price.toLocaleString()}</p>
 
           <div className="space-y-10">
             {product.colors && (
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 block mb-4">Color</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 block mb-4">Preferred Fabric Color / Pattern</span>
                 <div className="flex gap-4">
                   {product.colors.map(c => (
                     <button 
                       key={c} 
                       onClick={() => setSelectedColor(c)}
                       style={{ backgroundColor: c }}
-                      className={`size-10 rounded-full border border-slate-200 dark:border-slate-700 ring-offset-4 dark:ring-offset-background-dark transition-all ${selectedColor === c ? 'ring-2 ring-primary scale-110' : 'hover:scale-105'}`}
+                      className={`size-10 rounded-full border border-slate-205 dark:border-slate-705 ring-offset-4 dark:ring-offset-background-dark transition-all ${selectedColor === c ? 'ring-2 ring-primary dark:ring-accent-gold scale-110' : 'hover:scale-105'}`}
+                      title={c}
                     />
                   ))}
                 </div>
@@ -57,15 +70,20 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
             {product.sizes && (
               <div>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Select Size</span>
-                  <button className="text-xs font-medium underline text-slate-400 hover:text-primary transition-colors">Size Guide</button>
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Select Tailoring Size</span>
+                  <button 
+                    onClick={() => setIsSizeGuideOpen(true)}
+                    className="text-xs font-bold underline text-primary dark:text-accent-gold hover:opacity-80 transition-opacity"
+                  >
+                    Size Guide
+                  </button>
                 </div>
                 <div className="grid grid-cols-4 gap-3">
                   {product.sizes.map(s => (
                     <button 
                       key={s}
                       onClick={() => setSelectedSize(s)}
-                      className={`py-4 text-sm font-bold border rounded-xl transition-all uppercase ${selectedSize === s ? 'border-2 border-primary bg-primary/5 text-primary' : 'border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600'}`}
+                      className={`py-4 text-xs font-bold border rounded-xl transition-all uppercase ${selectedSize === s ? 'border-2 border-primary bg-primary/5 text-primary dark:border-accent-gold dark:bg-accent-gold/5 dark:text-accent-gold' : 'border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600'}`}
                     >
                       {s}
                     </button>
@@ -76,7 +94,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
 
             <button 
               onClick={() => onAddToCart(product, selectedSize, selectedColor)}
-              className="w-full bg-primary text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/30 active:scale-[0.98]"
+              className="w-full bg-primary dark:bg-accent-gold text-white dark:text-background-dark py-5 rounded-2xl font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/30 dark:shadow-accent-gold/20 active:scale-[0.98]"
             >
               Add to Bag
             </button>
@@ -86,21 +104,21 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
               <div className="flex gap-4">
                 <button 
                   onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')}
-                  className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
+                  className="p-3 rounded-full bg-[#eae3d5]/45 dark:bg-[#032019] text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
                   aria-label="Share on Facebook"
                 >
                   <Facebook className="w-4 h-4" />
                 </button>
                 <button 
                   onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`Check out this ${product.name}!`)}`, '_blank')}
-                  className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
+                  className="p-3 rounded-full bg-[#eae3d5]/45 dark:bg-[#032019] text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
                   aria-label="Share on Twitter"
                 >
                   <Twitter className="w-4 h-4" />
                 </button>
                 <button 
                   onClick={() => window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(product.image)}&description=${encodeURIComponent(product.name)}`, '_blank')}
-                  className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
+                  className="p-3 rounded-full bg-[#eae3d5]/45 dark:bg-[#032019] text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
                   aria-label="Share on Pinterest"
                 >
                   <Share2 className="w-4 h-4" />
@@ -108,7 +126,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
               </div>
             </div>
 
-            <div className="pt-10 border-t border-slate-200 dark:border-slate-800">
+            <div className="pt-10 border-t border-[#043327]/10 dark:border-[#e8cf7a]/15">
               <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6">Description</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
                 {product.description || 'Engineered for ultimate comfort and enduring style. Crafted from premium materials for a minimalist silhouette that stands the test of time.'}
@@ -136,10 +154,10 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map(review => (
-            <div key={review.id} className="bg-white dark:bg-slate-900/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-800">
+            <div key={review.id} className="bg-[#f6efe5] dark:bg-[#032019]/40 p-6 rounded-3xl border border-[#043327]/10 dark:border-[#e8cf7a]/15">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#eae3d5]/30 dark:bg-[#043327]/60 flex items-center justify-center">
                     <User className="w-4 h-4 text-slate-400" />
                   </div>
                   <span className="text-sm font-bold">{review.user}</span>
@@ -153,7 +171,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
             </div>
           ))}
         </div>
-        <button className="w-full mt-8 py-4 border border-slate-200 dark:border-slate-800 rounded-2xl text-sm font-bold uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex items-center justify-center gap-2">
+        <button className="w-full mt-8 py-4 border border-[#043327]/10 dark:border-[#e8cf7a]/15 rounded-2xl text-sm font-bold uppercase tracking-widest hover:bg-[#eae3d5]/25 dark:hover:bg-[#043327]/30 transition-colors flex items-center justify-center gap-2">
           <MessageSquare className="w-4 h-4" /> Write a Review
         </button>
       </section>
@@ -167,6 +185,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onAddToCa
           ))}
         </div>
       </section>
+
+      {/* Bespoke Size Guide Modal */}
+      <SizeGuideModal isOpen={isSizeGuideOpen} onClose={() => setIsSizeGuideOpen(false)} />
     </main>
   );
 };

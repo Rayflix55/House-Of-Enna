@@ -3,54 +3,100 @@ import { Product } from './types';
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Heavyweight Boxy Hoodie',
-    price: 85.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxHmyf6Ak8stitpf_qC08Xu3A80u6t-ZJcCHFddLUQc0PQ_InuAQJIiy7BGRjS1tvbDz2eRHtP26DZs60386JBPyl_5xR0JSl2sBIvPUmaHk9YSC28hldYDHdWGcutZ7NADo7AQbarpiukt_IiOmItpfyK92pVPvrMYlxquq5WeGGqkIu3v0N9_oveJjCtVZuaxNtJTkatCzUqXf6PkxcZjK2LKSYGDVtcdx8nJc_y0ddajdaALNJmAdIGDJA3jX9X-kHXuD2Ia984',
-    category: 'Hoodies',
-    description: 'Engineered for ultimate comfort and enduring style. This premium hoodie is crafted from 450 GSM heavy-weight French Terry cotton. Featuring a structured fit, double-lined hood, and reinforced seams for a minimalist silhouette that stands the test of time.',
-    colors: ['#0f172a', '#94a3b8', '#ffffff'],
-    sizes: ['S', 'M', 'L', 'XL']
+    name: 'Straight Dress',
+    price: 13000,
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop',
+    category: 'Dresses',
+    description: 'Straight Dress 💛. Made to fit you perfectly. Fully lined, clean finishing. In-stock fabrics only. Delivery in Abuja & nationwide.\n\nDM "DRESS" on WhatsApp to order + see available prints.',
+    colors: ['#EAB308', '#000000', '#043327'],
+    sizes: ['S', 'M', 'L', 'XL', 'Custom Fit'],
+    colorImages: {
+      '#EAB308': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop',
+      '#000000': 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&auto=format&fit=crop',
+      '#043327': 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&auto=format&fit=crop'
+    }
   },
   {
     id: '2',
-    name: 'Tech Cargo Jacket',
-    price: 145.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD4kadFV9aX_pmpX1fqp92nilZHW00_0Omwq-nNiAZi_GVyK3fTHlthoeAVbMJjL7ZCGG5LX5FVtthnrnxTWXyb84u56YghVwD6zn-sOvvG4eQlYqZP2CuXvYatma1TWZwtXbwm3GW3PQi-tuyS21ybU97J6uNn5A09G3VcNtBCrvH3gNn28qX5zcIy4fr6s7UVsk-0NBWmVlqrM3-za9Tj1jEAOzgzLE7X9nIL5IWFVS5WAbpA7UveWVUtBLqLHUVeCZRI6wq_Ui6s',
-    category: 'Jackets'
+    name: 'Two-Piece Set',
+    price: 14000,
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop',
+    category: 'Two-Piece Sets',
+    description: 'Two-Piece Set 💛. Top + skirt, made to fit. Perfect for casual + outings. In-stock fabrics only. Delivery in Abuja & nationwide.\n\nDM "SET" on WhatsApp to order + see prints.',
+    colors: ['#EAB308', '#EF4444', '#10B981'],
+    sizes: ['S', 'M', 'L', 'XL', 'Custom Fit'],
+    colorImages: {
+      '#EAB308': 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop',
+      '#EF4444': 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&auto=format&fit=crop',
+      '#10B981': 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&auto=format&fit=crop'
+    }
   },
   {
     id: '3',
-    name: 'Minimalist Canvas Tote',
-    price: 40.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDSwiAcWBQ_RvlEsNFMntw742ZGynryghtrAA0AcsX-cUHkasmEw6kHfguzvfUUInF5naVbER1JwJ0W7PYbgY5K_5HQs22j9ahxewYSF1Ues8RSbAZNyR75PKiKoah2KNmOaaD12CCetSkF9pgZ925sOAhQuWatUDWVTOHy8vNutPYzIByEYPUKYCVC8CWqJDrfu457TkKzhBrvRqOknlBieAIu6JEAulI3Tw-mTofj306tN1iNilbBWIQowcJAWzxuOp9j7bh6RFS9',
-    category: 'Accessories'
+    name: 'Luxury Lace Dress',
+    price: 40000,
+    image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&auto=format&fit=crop',
+    category: 'Luxury Lace',
+    description: 'Luxury Lace Dress ✨. Fully lined, clean finishing. Made to fit you perfectly. In-stock lace only. Delivery in Abuja & nationwide.\n\nDM "LACE" on WhatsApp to order + see designs.',
+    colors: ['#FFFFFF', '#D4AF37', '#722F37'],
+    sizes: ['S', 'M', 'L', 'XL', 'Custom Fit'],
+    colorImages: {
+      '#FFFFFF': 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&auto=format&fit=crop',
+      '#D4AF37': 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop',
+      '#722F37': 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=800&auto=format&fit=crop'
+    }
   },
   {
     id: '4',
-    name: 'Ribbed Wool Beanie',
-    price: 35.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpAz9K7atMJOntAUVVzMq9huzsBJK-KTpxqvVtqdMX_pz2e0tqPEaV9zy_nn-UWf_sW3y6ZlZwwWlGUDMlT04ypqTpp60FDXW9hznfInvQU4dsmY24ZYRapuvnRNCL5i6Yz18nHPKnjtWVVlj4YBfQv27L4GDhNkNI6-kDKgpmkLjJH584uV818RFYe6_LyRXmZoDBnhMTSGVv7swTx_BxavnzHbVw1aQW8Pc6BfeSPU-MOKsWomvmxsOOiWt5BqPGcPEt55ZKjShM',
-    category: 'Accessories'
+    name: 'Ankara Multi-Layer Dress',
+    price: 22000,
+    image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&auto=format&fit=crop',
+    category: 'Dresses',
+    description: 'Beautiful multi-layered vibrant Ankara Dress designed to turn heads. Fully customized stitching to standard sizes or personal measurements. Available in Abuja and nationwide.',
+    colors: ['#EAB308', '#e25c30', '#DB2777'],
+    sizes: ['S', 'M', 'L', 'XL', 'Custom Fit'],
+    colorImages: {
+      '#EAB308': 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&auto=format&fit=crop',
+      '#e25c30': 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&auto=format&fit=crop',
+      '#DB2777': 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&auto=format&fit=crop'
+    }
   },
   {
     id: '5',
-    name: 'Oversized Hoodie',
-    price: 450.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAWdiw3t8eagIfadNBLORg-w5LLEt-D4Uv741sfiNA5-yvkJDq_u9g7nK8LwB2uv-cs8wqJEfZLCaa0Gz7s81MXCfVFvUUV5Wrht9m83MjFJbtiqKMxpEq56CZEMGEZYO9sAIKkpHoCc8SctP8j9tkZK689W0uPJBT-zYT7ellkx0nvfXW8Nj-tVBnO5d2UKpqKNFT5dQqlo7qWjXFEL9S5j0wlXgFrVfErsOna5sxxez-cSv8bbi4FycFhrrGVjZxiHcKHd_2cZVu',
-    category: 'Hoodies'
+    name: 'Premium Senator Wear',
+    price: 35000,
+    image: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&auto=format&fit=crop',
+    category: 'Senator & Native',
+    description: 'Modern men senator wear, custom fitted. Comes with top and trousers. Tailored with premium material for events, weddings, and executive looks.',
+    colors: ['#1E293B', '#043327', '#0F172A'],
+    sizes: ['M', 'L', 'XL', 'XXL', 'Custom Fit'],
+    colorImages: {
+      '#1E293B': 'https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&auto=format&fit=crop',
+      '#043327': 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop',
+      '#0F172A': 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&auto=format&fit=crop'
+    }
   },
   {
     id: '6',
-    name: 'Tailored Wool Jacket',
-    price: 1200.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCJY4qKYPOwrZ8EsA5fbPeR7mQ9P5I2KkmIDc8vYOsJ7knIeeg05HAWw3JAqAeDBJ9NlKUFN1sV98MGMnWyZ9B8QUG0eSz6GmM5FERtk1bEGepC1MZbF9Hq883mmOTmsf8AWdyaexsTBUbMnzTK35AQ_myhrofaHVGeJzZoNLczcVduFEUszijT--WauXNxKgWmyR0F0yDge03xRsvPNt4V1D9LBGMOLku935qFibVgVbvLgACX6xpULfXpGnkjayzOIg-Y929omYkq',
-    category: 'Jackets'
+    name: 'Adire Silk Kaftan',
+    price: 18000,
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop',
+    category: 'Dresses',
+    description: 'Elegant loose-flowing Adire Pure Silk Kaftan. High end premium feeling material combined with traditional Nigerian printing craftsmanship.',
+    colors: ['#eae3d5', '#e25c30', '#059669'],
+    sizes: ['Free Size', 'Custom Fit'],
+    colorImages: {
+      '#eae3d5': 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop',
+      '#e25c30': 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop',
+      '#059669': 'https://images.unsplash.com/photo-1495385794356-15371f548e61?w=800&auto=format&fit=crop'
+    }
   }
 ];
 
+
 export const CATEGORIES = [
-  { name: 'Hoodies', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDWqSJyZ04_Fl64KBBoS1Qf3ePNNkZ5Rdu19Rqm3s701f2VvNfiEI6caz_Q8rQH64IEvmwYeJzMTsbsFVKIpCWOY2aMIptqvtqXOafNFevxWavVJtXtfeJEmIvU2ACQW0b3CXJvJ-81pqwK7hqABGjl4H0azEs6UdHYL0STwLI7jsm9w6wVjPxVujDaGk4XZr18U7ypVsW2aWREZwnw4LbCjrMEuTW5-P-hP35g0vpbEtrZOkkXhW_iXTAvmS59nmqFNKQ_GGe_Vn4K' },
-  { name: 'Jackets', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBU9psC8Y7FhV4p1fDzW6y9W2L2H9AE5GcS3aDZmerJCYrUGp9RQfbisLbquttOmsjKjEyp7ysZubBfaFyHSlH05cXTHo_uJwShBB649M9gZ7X0VCI-mOKUz2AHg5bWt-HdwRW2_gHV0RzgS0EUxjjudM937gNVDc2uxWxQ0n7AmOqprYfKBMnEtv1oug3d6YlgKBradNADN4mtUg1VYsDSrkfjiHDyiigQiwmN-jH4pbWiaroy_hS7RNVXdLwUAGC0gYhf_e0B8UGF' },
-  { name: 'Accessories', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADp5OtFCPOZDJOaSOO3K7ejUaxmaiC77bD-ihnT5MhQTiqYGwkGTWIMc_h5yolf_pb_DhaXjSx8I54jSXQVFUXhUzgD9HjGlkt44lLO_m9lIwa32gWQhZtnMi84SV7uiu0EDpDMhBHLDGjDPOp4MkI0qVw0x3ArhDbaoEf8XjtxrAOG5bxt710qkL0WybfpPc4nxBNSEbSZBmroiEoge4xao59_H1hxGbgdrQFWsZQcpluBiEuIYKdzERn1Wy5ruFCmRM2JEokkQTo' },
-  { name: 'T-Shirts', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCo5c9Uxz9po8sRra6LKBf7u9tMYOS4J-AMxJ-AAFlqKYw2YrqpyN15KWXeIDhoWjUcNCmmmVRSf8TZ1JXl4vmpxkFuJ4eBD8TJygH9LE-Q-nzSscg45rAoFao7XMB9rV2JxyepuY1q7LOUwWge90KAuh48eevYcI8rN_Kd2haP7He3zfjD1ZkjLCo0Fna14hcYFrIzt6rfmpGXs-5eGvchU9CC7Oq6llGEWEkw5vK6buJ2KCVt5KQ5GTH9VBcQGfLy3zbK_KvhQCKl' }
+  { name: 'Dresses', image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&auto=format&fit=crop' },
+  { name: 'Two-Piece Sets', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&auto=format&fit=crop' },
+  { name: 'Luxury Lace', image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=300&auto=format&fit=crop' },
+  { name: 'Senator & Native', image: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?w=300&auto=format&fit=crop' }
 ];

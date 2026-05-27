@@ -112,10 +112,10 @@ export const Profile: React.FC<ProfileProps> = ({ showToast }) => {
       </div>
 
       <div className="space-y-4">
-        <div className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <div className="bg-[#f6efe5] dark:bg-[#032019]/60 rounded-2xl border border-[#043327]/15 dark:border-[#e8cf7a]/15 overflow-hidden">
           <button 
             onClick={() => showToast("Order history feature coming soon!")}
-            className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            className="w-full flex items-center justify-between p-5 hover:bg-[#eae3d5]/30 dark:hover:bg-[#043327] transition-colors"
           >
             <div className="flex items-center gap-4">
               <Package className="w-5 h-5 text-slate-400" />
@@ -125,7 +125,7 @@ export const Profile: React.FC<ProfileProps> = ({ showToast }) => {
           </button>
           <button 
             onClick={() => showToast("Address management feature coming soon!")}
-            className="w-full flex items-center justify-between p-5 border-t border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            className="w-full flex items-center justify-between p-5 border-t border-[#043327]/10 dark:border-[#e8cf7a]/15 hover:bg-[#eae3d5]/30 dark:hover:bg-[#043327] transition-colors"
           >
             <div className="flex items-center gap-4">
               <MapPin className="w-5 h-5 text-slate-400" />
@@ -135,7 +135,7 @@ export const Profile: React.FC<ProfileProps> = ({ showToast }) => {
           </button>
           <button 
             onClick={() => showToast("Payment methods feature coming soon!")}
-            className="w-full flex items-center justify-between p-5 border-t border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            className="w-full flex items-center justify-between p-5 border-t border-[#043327]/10 dark:border-[#e8cf7a]/15 hover:bg-[#eae3d5]/30 dark:hover:bg-[#043327] transition-colors"
           >
             <div className="flex items-center gap-4">
               <CreditCard className="w-5 h-5 text-slate-400" />
@@ -145,20 +145,20 @@ export const Profile: React.FC<ProfileProps> = ({ showToast }) => {
           </button>
         </div>
 
-        <div className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <div className="bg-[#f6efe5] dark:bg-[#032019]/65 rounded-2xl border border-[#043327]/15 dark:border-[#e8cf7a]/15 overflow-hidden">
           <button 
             onClick={() => showToast("Settings feature coming soon!")}
-            className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            className="w-full flex items-center justify-between p-5 hover:bg-[#eae3d5]/30 dark:hover:bg-[#043327] transition-colors"
           >
             <div className="flex items-center gap-4">
               <Settings className="w-5 h-5 text-slate-400" />
               <span className="font-bold">Settings</span>
             </div>
-            <ChevronRight className="w-5 h-5 text-slate-300" />
+            <ChevronRight className="w-5 h-5 text-[#043327]" />
           </button>
           <button 
             onClick={() => showToast("Logged out successfully!")}
-            className="w-full flex items-center justify-between p-5 border-t border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-red-500"
+            className="w-full flex items-center justify-between p-5 border-t border-[#043327]/10 dark:border-[#e8cf7a]/15 hover:bg-[#eae3d5]/30 dark:hover:bg-[#043327] transition-colors text-red-500"
           >
             <div className="flex items-center gap-4">
               <LogOut className="w-5 h-5" />
@@ -235,7 +235,7 @@ export const Blog: React.FC<BlogProps> = ({ showToast }) => {
           >
             <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden mb-6">
               <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
-              <div className="absolute top-6 left-6 bg-white dark:bg-slate-900 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+              <div className="absolute top-6 left-6 bg-white dark:bg-[#032019] border border-[#043327]/10 dark:border-[#e8cf7a]/15 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
                 {post.date}
               </div>
             </div>
@@ -246,15 +246,15 @@ export const Blog: React.FC<BlogProps> = ({ showToast }) => {
         ))}
       </div>
 
-      <div className="bg-slate-100 dark:bg-slate-900/50 rounded-[3rem] p-8 md:p-16">
-        <h2 className="text-3xl font-black uppercase tracking-tight mb-10 text-center">Fashion Q&A</h2>
+      <div className="bg-[#eae3d5]/45 dark:bg-[#032019]/50 rounded-[3rem] p-8 md:p-16">
+        <h2 className="text-3xl font-black uppercase tracking-tight mb-10 text-center text-[#043327] dark:text-[#e8cf7a]">Fashion Q&A</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-              <h3 className="text-lg font-black uppercase mb-4 flex gap-3">
-                <span className="text-primary">Q:</span> {faq.q}
+            <div key={i} className="bg-[#f6efe5] dark:bg-emerald-950/20 p-8 rounded-3xl border border-[#043327]/10 dark:border-emerald-900/15">
+              <h3 className="text-lg font-black uppercase mb-4 flex gap-3 text-[#043327] dark:text-[#e8cf7a]">
+                <span className="text-[#e25c30]">Q:</span> {faq.q}
               </h3>
-              <p className="text-slate-500 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                 <span className="font-bold text-slate-900 dark:text-white mr-2">A:</span> {faq.a}
               </p>
             </div>

@@ -7,7 +7,6 @@ import React, { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Screen, Product, CartItem } from './types';
 import { Navbar } from './components/Navbar';
-import { BottomNav } from './components/BottomNav';
 import { Home } from './components/Home';
 import { ProductDetail } from './components/ProductDetail';
 import { Bag } from './components/Bag';
@@ -120,7 +119,7 @@ export default function App() {
       <div className="flex-1 flex flex-col min-h-[calc(100vh-64px)]">
         <AnimatePresence mode="wait">
           {currentScreen === 'HOME' && (
-            <Home key="home" onProductClick={navigateToProduct} onNavigate={setCurrentScreen} showToast={showToast} />
+            <Home key="home" onProductClick={navigateToProduct} onNavigate={setCurrentScreen} showToast={showToast} onAddToCart={addToCart} />
           )}
 
           {currentScreen === 'EXPLORE' && (
@@ -145,7 +144,7 @@ export default function App() {
 
           {currentScreen === 'PRODUCT_DETAIL' && selectedProduct && (
             <ProductDetail 
-              key="detail" 
+              key={selectedProduct.id} 
               product={selectedProduct} 
               onAddToCart={addToCart} 
               onProductClick={navigateToProduct}
@@ -193,11 +192,6 @@ export default function App() {
           )}
         </AnimatePresence>
       </div>
-
-      <BottomNav currentScreen={currentScreen} onNavigate={(s) => {
-        setCurrentScreen(s);
-        window.scrollTo(0, 0);
-      }} />
 
       {/* Toast Notification */}
       <AnimatePresence>
