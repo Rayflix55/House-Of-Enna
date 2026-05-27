@@ -1,6 +1,6 @@
 # MODERN | Minimalist Fashion Store
 
-![MODERN Storefront](https://picsum.photos/seed/fashion-hero/1200/600)
+![MODERN Storefront](![alt text](image.png))
 
 A premium, high-performance e-commerce storefront designed for the modern minimalist. Built with **React 19**, **Vite**, and **Tailwind CSS v4**, this application offers a seamless, high-end shopping experience with a focus on clean aesthetics and fluid interactions.
 
