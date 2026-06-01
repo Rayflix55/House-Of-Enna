@@ -34,7 +34,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '3',
     name: 'Luxury Lace Dress',
-    price: 40000,
+    price: 50000,
     image: 'https://i.etsystatic.com/53209844/r/il/49742e/8026719966/il_1588xN.8026719966_iiou.jpg',
     category: 'Luxury Lace',
     description: 'Luxury Lace Dress ✨. Fully lined, clean finishing. Made to fit you perfectly. In-stock lace only. Delivery in Abuja & nationwide.\n\nDM "LACE" on WhatsApp to order + see designs.',
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '9',
     name: 'Elegant One Shoulder Beige Jumpsuit | Wide Leg Palazzo',
-    price: 28000,
+    price: 30000,
     image: 'https://i.etsystatic.com/62546431/r/il/175378/8012694710/il_1588xN.8012694710_9ns8.jpg',
     category: 'Two-Piece Sets',
     description: 'Sleek, body-contouring premium Crepe Jumpsuit. Featuring a sharp-lined halter neckline, supportive high waistline, elegant wide-leg fit, and waist-cinching structure.',
@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '11',
     name: 'Elegant Ankara Corset Dress',
-    price: 24000,
+    price: 60000,
     image: 'https://i.etsystatic.com/59407855/r/il/1a0190/6880468188/il_1588xN.6880468188_ycsa.jpg',
     category: 'Dresses',
     description: 'Beautiful Ankara print structured with a boned corset bodice that shapes and highlights contours flawlessly. Accented with a sleek high leg-slit. Crafted perfectly in Abuja.',
@@ -169,7 +169,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '12',
     name: 'Bespoke Royal Agbada Gown',
-    price: 42000,
+    price: 50000,
     image: 'https://i.etsystatic.com/62426806/r/il/a06627/8041909022/il_1588xN.8041909022_gad7.jpg',
     category: 'Senator & Native',
     description: 'Make a royal entrance in our bespoke female Agbada. Crafted from high-lux structure fabrics and embroidered with luxurious traditional threads. Highly premium feel.',
@@ -214,7 +214,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '15',
     name: 'Ankara Mermaid Dress',
-    price: 48000,
+    price: 35000,
     image: 'https://i.etsystatic.com/59494755/r/il/a855be/7922360290/il_1588xN.7922360290_dxil.jpg',
     category: 'Luxury Lace',
     description: 'Glistening off-shoulder metallic lace gown in a romantic mermaid silhouette. Perfectly tailored with premium underlying lining to create a flawless, luxurious fit.',
@@ -244,7 +244,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '17',
     name: 'Indigo Adire Sheath Dress',
-    price: 16500,
+    price: 18500,
     image: 'https://i.etsystatic.com/23980211/r/il/00e6a9/5182115212/il_1588xN.5182115212_iyfw.jpg',
     category: 'Dresses',
     description: 'Modern, breathable Adire Shift Dress 💙. Crafted with premium soft cotton-silk dyed locally. Easy summer fit that oozes simple class. Locally crafted in Abuja.',
