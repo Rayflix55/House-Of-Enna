@@ -4,7 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Straight Dress',
-    price: 13000,
+    price: 18000,
     image: 'https://i.etsystatic.com/52164799/r/il/612c24/6152648555/il_1588xN.6152648555_hpog.jpg',
     category: 'Dresses',
     description: 'Straight Dress 💛. Made to fit you perfectly. Fully lined, clean finishing. In-stock fabrics only. Delivery in Abuja & nationwide.\n\nDM "DRESS" on WhatsApp to order + see available prints.',
@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '2',
     name: 'Two-Piece Set',
-    price: 14000,
+    price: 30000,
     image: 'https://i.etsystatic.com/53228739/r/il/57b9bb/7536422182/il_1588xN.7536422182_d7hb.jpg',
     category: 'Two-Piece Sets',
     description: 'Two-Piece Set 💛. Top + skirt, made to fit. Perfect for casual + outings. In-stock fabrics only. Delivery in Abuja & nationwide.\n\nDM "SET" on WhatsApp to order + see prints.',
@@ -34,7 +34,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '3',
     name: 'Luxury Lace Dress',
-    price: 50000,
+    price: 55000,
     image: 'https://i.etsystatic.com/53209844/r/il/49742e/8026719966/il_1588xN.8026719966_iiou.jpg',
     category: 'Luxury Lace',
     description: 'Luxury Lace Dress ✨. Fully lined, clean finishing. Made to fit you perfectly. In-stock lace only. Delivery in Abuja & nationwide.\n\nDM "LACE" on WhatsApp to order + see designs.',
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '5',
     name: 'Ankara Blazer and Pants Set',
-    price: 38000,
+    price: 50000,
     image: 'https://i.etsystatic.com/58598219/r/il/588e30/7199944396/il_1588xN.7199944396_i0lt.jpg',
     category: 'Senator & Native',
     description: 'Conceited class and fine lines dictate this gorgeous longline female Senator top and matching slim-cut trousers. Artfully tailored with a sharp, sleek drape from premium high-grade soft structure fabrics.',
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '6',
     name: 'Adire Silk Kaftan',
-    price: 18000,
+    price: 25000,
     image: 'https://i.etsystatic.com/13094714/r/il/60d857/3470094321/il_1588xN.3470094321_iohb.jpg',
     category: 'Dresses',
     description: 'Elegant loose-flowing Adire Pure Silk Kaftan. High end premium feeling material combined with traditional Nigerian printing craftsmanship.',
@@ -184,7 +184,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '13',
     name: 'Draped Crepe Boubou',
-    price: 30000,
+    price: 40000,
     image: 'https://i.etsystatic.com/36417893/r/il/8585a8/7470209917/il_1588xN.7470209917_kq96.jpg',
     category: 'Dresses',
     description: 'Sweeping, sophisticated crepe Boubou gown. Artfully designed with custom hand-beaded lace along the deep neckline for subtle sparkle and timeless class.',
@@ -229,7 +229,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '16',
     name: 'African Wedding Party Dress for Women',
-    price: 35000,
+    price: 50000,
     image: 'https://i.etsystatic.com/60206093/r/il/0258c5/7904259627/il_1588xN.7904259627_81wl.jpg',
     category: 'Senator & Native',
     description: 'Sophisticated asymmetrical neckline women’s senator gown. Decorated with hand-picked premium gold steel buttons and structured sharp shoulders. Tailored by master Abuja craftsmen.',
@@ -244,7 +244,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '17',
     name: 'Indigo Adire Sheath Dress',
-    price: 18500,
+    price: 28500,
     image: 'https://i.etsystatic.com/23980211/r/il/00e6a9/5182115212/il_1588xN.5182115212_iyfw.jpg',
     category: 'Dresses',
     description: 'Modern, breathable Adire Shift Dress 💙. Crafted with premium soft cotton-silk dyed locally. Easy summer fit that oozes simple class. Locally crafted in Abuja.',
@@ -259,7 +259,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '18',
     name: 'African Print Long Kimono Jacket',
-    price: 19000,
+    price: 29000,
     image: 'https://i.etsystatic.com/16414037/r/il/f582e8/8101197869/il_1588xN.8101197869_33q9.jpg',
     category: 'Two-Piece Sets',
     description: 'Dazzling Ankara Kimono Wrap jacket and matching trousers. Can be dressed up with high heels for weddings or down with sandals. Tailored to perfection with meticulous seams.',
@@ -274,7 +274,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '19',
     name: 'Luxury Cord Lace Boubou',
-    price: 48000,
+    price: 55000,
     image: 'https://i.etsystatic.com/13094714/r/il/6aa1ae/5683845249/il_1588xN.5683845249_muo9.jpg',
     category: 'Luxury Lace',
     description: 'Premium cord lace Boubou gown. Decorated with majestic sequence trim on the neck and comes with a matching satin inner slip and headwrap (gele). Pure prestige clothing.',
@@ -289,7 +289,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '20',
     name: 'Modern Senator Pantsuit',
-    price: 39500,
+    price: 50000,
     image: 'https://i.etsystatic.com/47119599/r/il/8907c0/7867231360/il_1588xN.7867231360_bu7o.jpg',
     category: 'Senator & Native',
     description: 'Strict fashion and sharp attitude define this modern women\'s senator pantsuit. Adorned with delicate embroidery along the concealed button line. High-grade premium crepe.',
@@ -304,7 +304,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '21',
     name: 'Ankara Pleated Midi Gown',
-    price: 23000,
+    price: 45000,
     image: 'https://i.etsystatic.com/20810401/r/il/2e1ee9/7820219452/il_1588xN.7820219452_arsa.jpg',
     category: 'Dresses',
     description: 'Gracefully flowing pleated Ankara midi dress with detailed balloon sleeves. Structured waist belt included. Handcrafted with authentic premium graded wax print.',
